@@ -33,7 +33,7 @@ if [[ -e /usr/local/cuda ]]; then
     cd $PYAV_LIBRARY_ROOT
     if [[ ! -e "$PYAV_LIBRARY_ROOT/nv-codec-headers" ]]; then
         git clone https://github.com/FFmpeg/nv-codec-headers.git
-        cd nv-codec-headers
+        cd nv-codec-headers && git checkout origin/sdk/9.1
         make -j4
         make PREFIX="$PYAV_LIBRARY_PREFIX" install
     fi
